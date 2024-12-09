@@ -14,7 +14,8 @@ export default defineConfig((ctx) => {
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
       'i18n',
-      'axios'
+      'axios',
+      'supabase'
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
@@ -94,7 +95,18 @@ export default defineConfig((ctx) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {},
+      config: {
+        brand:{
+          primary: '#2c9c6a',
+          secondary:'#26A69A',
+          accent: '#9C27B0',
+          dark: '#1d1d1d',
+          positive: '#21BA45',
+          negative:'#C10015',
+          info: '#31CCEC',
+          warning: '#F2C037'
+        }
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack

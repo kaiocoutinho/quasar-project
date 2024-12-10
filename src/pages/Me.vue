@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
-    <div>
-
+    <div v-if="user">
+      <p>Hello {{ user.user_metadata.name }}</p>
     </div>
   </q-page>
 </template>
@@ -11,6 +11,13 @@ import { defineComponent } from 'vue';
 import useAuthUser from 'src/composables/UseAuthUser.js'
 
 export default defineComponent({
-  name: 'IndexPage'
+  name: 'PageMe',
+  setup(){
+    const { user } = useAuthUser();
+
+    return{
+      user
+    }
+  }
 });
 </script>
